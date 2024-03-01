@@ -3,12 +3,17 @@
 {% block body %}
 
 <style>
-
 .login {
 
-  width: 50%;
+
   margin: 0 auto;
+  padding: 5px;
   text-align: center;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  height: 500px;
+  border: 1px solid #fff;
 
 }
 
@@ -16,29 +21,13 @@
 
 
   margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 20px;
-  height: 500px;
-  border: 1px solid #fff;
-
-}
-
-input {
-
-  border: 1px solid #ccc;
-  width: 80%;
-  border-radius: 5px;
-  padding:20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 10px;
+  width: 90%;
 
 
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
 
   border: 1px solid #ccc;
   width: 80%;
@@ -55,7 +44,12 @@ input[type="text"] {
   <input type="text" name="username" placeholder="username">
   <input type="password" name="password" placeholder="password">
   <button type="submit">Login</button>
-</div>
 </form>
+
+<form action="{{url_for('signup')}}">
+  <button type="submit">Sign-up</button>
+</form>
+
+</div>
 
 {% endblock %}
