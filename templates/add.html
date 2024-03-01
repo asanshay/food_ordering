@@ -1,0 +1,79 @@
+{% extends "home.html" %}
+
+{% block body %}
+
+<style> 
+
+body {
+
+
+}
+
+  form {
+    margin-left: 1px;
+  }
+
+  .delete {
+
+    width: 100%;
+
+  }
+  p {
+
+    background-color: #807E7E;
+    text-align: left;
+    padding: 12px;
+    font-size: 25px;
+
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+  } 
+
+  li {
+
+    justify-content: space-between;
+    display:flex;
+    margin-bottom: 8px;
+    padding: 12px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    font-size: 16px;
+
+  }
+
+
+  button {
+    white-space: nowrap;
+    display: flex;
+    width: 100px;
+    text-align: center;
+  }
+
+  .cross {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+</style> 
+<p> Available food items - </p>
+<ul>
+  <form class="delete" method="get">
+  {% for item in foods %}
+  <li> {{item}} <button class='cross' value="{{loop.index0}}" name="dindex">X</button></li>
+  {% endfor %}
+  </form>
+</ul>
+
+<form method='post'>
+  <input type='text' placeholder="Add Item Here" name="add_item">
+  <button type='submit'> Add Item </button>
+  
+</form>
+{% endblock %}

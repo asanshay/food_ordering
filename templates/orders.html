@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+
+{% block body %}
+
+<center> <h3> Hey {{name1}} thanks for ordering {{food1}}.</center>
+
+<form action='/order' method='get'>
+  <button type="submit" value='redirect' name='redirect' autofocus>Click here</button>
+  <label>to order more food</label>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Order Food</title>
+</head>
+<body>
+  <style>  
+
+ .container {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+
+  body {
+
+    margin: 0;
+    font-family: Arial,sans-serif;
+    background-image: url('{{url_for('static',filename='bg.jpg')}}');
+    background-size: cover;
+    background-repeat: no-repeat;
+ 
+
+
+  }
+
+  button[type="submit"] {
+
+  cursor: pointer;
+  font-size: 16px;
+  width: 100px;
+  background-color: #4CAF50;
+  padding:10px 20px;
+  border: 1px;
+  border-radius: 5px;
+  
+
+}
+
+  button[type="submit"]:hover {
+    background-color: #ccc;
+  }
+
+
+
+  form {
+
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    
+
+  }
+
+  input[type="text"],select {
+
+    width:100%;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+  }
+
+  h3 {
+    text-align:center;
+    color: white;
+  }
+
+  .navbar {
+
+    display: flex;
+    background-color: #333;
+    margin: 0;
+    padding: 10px 20px;
+
+  } 
+
+
+  #login-button {
+    text-align: left;
+    margin: 0;
+    background-color: transparent;
+  }
+
+  #home-button {
+    text-align: left;
+    margin: 0;
+    background-color: transparent;
+  }
+
+  option {
+
+    padding: 10px;
+    font-size: 15px;
+    
+  }
+
+  .lnh {
+
+    display:flex;
+    width:10%;
+    padding:0;
+    margin: 0;
+    text-align: left;
+
+  }
+
+.all {
+
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 30%;
+  border: 1px solid #fff;
+
+
+
+}
+  </style>
+
+
+   <nav class="navbar">
+
+  
+  <div class="lnh">
+    
+  <form action='{{url_for('login')}}'>
+    
+  <button type="submit" id="login-button">Login</button>
+
+  </form>
+  
+  <form action='{{url_for('home')}}'>
+
+    <button type="submit" id="home-button">Home</button>
+
+  </form>
+  
+  </div>
+
+
+  </nav>
+
+
+  {% block body %}
+  <div class="all">
+    
+  
+  <div class="container">
+
+  <h1>Welcome to food ordering website.</h1>
+  <h3>Order any food.</h3>
+
+  </div>
+ 
+  <form action='/order' method='post'>
+    <input autofocus type="text" name="full_name" placeholder="Enter your name"><br>
+    <select name="food_name">
+      <option value="None"> Select </option>
+      {% for item in foods %}
+
+      <option value={{item}}> {{item}} </option>
+
+      {% endfor %}
+    </select>
+  <button type="submit">submit</button>
+  </form>
+  </div>
+  {% endblock %}
+</body>

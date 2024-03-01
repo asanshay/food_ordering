@@ -1,0 +1,61 @@
+{% extends "home.html" %}
+
+{% block body %}
+
+<style>
+
+.login {
+
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.form1 {
+
+
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  height: 500px;
+  border: 1px solid #fff;
+
+}
+
+input {
+
+  border: 1px solid #ccc;
+  width: 80%;
+  border-radius: 5px;
+  padding:20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+
+}
+
+input[type="text"] {
+
+  border: 1px solid #ccc;
+  width: 80%;
+  padding:20px;
+  border-radius: 5px;
+
+}
+
+
+
+</style>
+<div class="login">
+<form class="form1" method='post'>
+  <input type="text" name="username" placeholder="username">
+  <input type="password" name="password" placeholder="password">
+  <button type="submit">Login</button>
+</div>
+</form>
+
+{% endblock %}
